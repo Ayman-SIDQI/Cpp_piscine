@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 10:30:55 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/05 17:37:27 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/04 17:12:55 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/05 20:54:05 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void )
+class Point
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+private:
+	const Fixed	x;
+	const Fixed	y;
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+public:
+	Point();
+	Point(const float ix, const float iy);
+	Point(const Point& other);
+	~Point();
+	Point&	operator=(const Point& other);
+	// Fixed&	gF(int xy) const;
+	Fixed&	gX() const;
+	Fixed&	gY() const;
+	
+};
+
+bool	bsp( Point const a, Point const b, Point const c, Point const point);

@@ -6,23 +6,22 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 10:30:55 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/05 17:37:27 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/05 20:53:02 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 int main( void )
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point const	a(0.0f, 5.0f);
+	Point const	b(3.0f, 0.0f);
+	Point const	c(0.0f, 0.0f);
+	Point const	f(1.44f, 2.39f);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	if (bsp(a, b, c, f))
+		std::cout << "Inside" << std::endl;
+	else 
+		std::cout << "Outside" << std::endl;
+	return (0);
 }
