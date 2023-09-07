@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 10:30:55 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/05 17:37:27 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/06 15:11:23 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,22 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
+
+				// Fixed ui;
+				// Fixed nan;
+				// std::cout << ui / nan << std::endl;
+	// a = b;
+	// a++;
+	// if(a != b)
+	// {
+	// 	std::cout << "AHAHAHAHAH" << std::endl;
+	// 	return (69);
+	// }
+
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
 	return 0;
 }

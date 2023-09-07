@@ -6,37 +6,36 @@
 #    By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/03 10:08:27 by asidqi            #+#    #+#              #
-#    Updated: 2023/09/04 20:50:19 by asidqi           ###   ########.fr        #
+#    Updated: 2023/09/06 13:56:13 by asidqi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Point
 
 CC=c++
+FLAGS=-Wall -Wextra -Werror -std=C++98
+NAME=Point
 
-CFLAG=-Wall -Wextra -Werror -std=c++98
-
-CPS=Fixed.cpp\
+SRC=Fixed.cpp\
 	Point.cpp\
 	bsp.cpp\
 	main.cpp
 
-OBJ=$(CPS:.cpp=.o)
+OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
 
-%.cpp: %.o
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+	$(CC) $(FLAGS) $(OBJ) -o $@
 
-clean:
-	rm -rf $(OBJ)
+clean: 
+	rm -f $(OBJ)
 
 fclean:
-	rm -rf $(OBJ) $(NAME)
-
-re:	fclean all
+	rm -f $(OBJ) $(NAME)
+	
+re : fclean all
 
 .PHONY: all clean fclean re

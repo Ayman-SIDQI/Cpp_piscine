@@ -6,11 +6,12 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 20:09:39 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/05 21:34:42 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/06 15:42:30 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+#include <math.h>
 
 bool	bsp( Point const a, Point const b, Point const c, Point const p)
 {
@@ -24,3 +25,25 @@ bool	bsp( Point const a, Point const b, Point const c, Point const p)
 		return (true);
 	return (false);
 }
+
+// float area(Point const a, Point const b, Point const c) 
+// {
+// 	float	area = ((a.gX().toFloat() * (b.gY().toFloat() - c.gY().toFloat())) + (b.gX().toFloat() * (c.gY().toFloat()) - a.gY().toFloat()) + (c.gX().toFloat() * ( a.gY().toFloat()) - b.gY().toFloat())) / 2.0f;
+// 	return (area); 
+// }
+
+// bool	isInside(Point const a, Point const b, Point const c, Point const p)
+// {
+// 	float big_area = area(a, b, c);
+// 	float s1 = area(p, b, c);
+// 	float s2 = area(a, p, c);
+// 	float s3 = area(a, b, p);
+// 	return (big_area == abs(s1 + s2 + s3));
+// }
+
+// bool	bsp( Point const a, Point const b, Point const c, Point const p)
+// {
+// 	if (isInside(a, b, c, p))
+// 		return (true);
+// 	return (false);
+// }

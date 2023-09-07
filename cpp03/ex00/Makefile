@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/03 10:08:27 by asidqi            #+#    #+#              #
-#    Updated: 2023/09/06 17:31:06 by asidqi           ###   ########.fr        #
+#    Created: 2023/09/07 10:41:26 by asidqi            #+#    #+#              #
+#    Updated: 2023/09/07 12:10:31 by asidqi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=c++
 FLAGS=-Wall -Wextra -Werror -std=C++98
-NAME=Fixed
+NAME=ClapTrap
 
-SRC=Fixed.cpp\
-	Main.cpp
+SRC=main.cpp\
+	ClapTrap.cpp
 
 OBJ=$(SRC:.cpp=.o)
 

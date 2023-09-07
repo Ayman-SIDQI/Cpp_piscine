@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 17:12:55 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/06 15:42:17 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/07 10:41:24 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/07 12:21:49 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-class Point
+int main (void)
 {
-private:
-	const Fixed	x;
-	const Fixed	y;
-
-public:
-	Point();
-	Point(const float ix, const float iy);
-	Point(const Point& other);
-	~Point();
-	Point&	operator=(const Point& other);
-	Fixed&	gX() const;
-	Fixed&	gY() const;
-};
-
-bool	bsp( Point const a, Point const b, Point const c, Point const point);
-// bool	isInside(Point const a, Point const b, Point const c, Point const p);
+	ClapTrap a("R2");
+	ClapTrap b("D2");
+	
+	a = b;
+	for (int i = 0; i < 11; i++)
+	{
+		a.attack("b");
+		b.takeDamage(1);
+		b.beRepaired(5);
+	}
+	b.takeDamage(1);
+}

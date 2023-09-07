@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 17:12:55 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/06 15:42:17 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/06 21:29:00 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/07 12:16:33 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include <iostream>
+#include <string>
 
-class Point
+class ClapTrap
 {
 private:
-	const Fixed	x;
-	const Fixed	y;
-
+	std::string	name;
+	int			hp;
+	int			ep;
+	int			att;
 public:
-	Point();
-	Point(const float ix, const float iy);
-	Point(const Point& other);
-	~Point();
-	Point&	operator=(const Point& other);
-	Fixed&	gX() const;
-	Fixed&	gY() const;
-};
+	void attack(const std::string& target);
+	void beRepaired(unsigned int amount);
+	void takeDamage(unsigned int amount);
 
-bool	bsp( Point const a, Point const b, Point const c, Point const point);
-// bool	isInside(Point const a, Point const b, Point const c, Point const p);
+	ClapTrap(std:: string Name);
+	ClapTrap();
+	ClapTrap(ClapTrap& other);
+	ClapTrap& operator=(ClapTrap& other);
+	~ClapTrap();
+};
