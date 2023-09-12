@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 21:29:00 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/11 21:55:05 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/08 20:12:22 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/11 22:02:51 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
 
-class ClapTrap
+class FragTrap : public ClapTrap
 {
-protected:
-	std::string	name;
-	int			hp;
-	int			ep;
-	int			att;
-public:
-	void attack(const std::string& target);
-	void beRepaired(unsigned int amount);
-	void takeDamage(unsigned int amount);
 
-	ClapTrap(std:: string Name);
-	ClapTrap(ClapTrap& other);
-	ClapTrap& operator=(ClapTrap& other);
-	ClapTrap();
-	~ClapTrap();
+public:
+	FragTrap();
+	FragTrap(std::string Name);
+	FragTrap(FragTrap& other);
+	~FragTrap();
+	FragTrap&	operator=(FragTrap& other);
+	// void		attack(const std::string& target);
+	void		highFivesGuys(void);
 };

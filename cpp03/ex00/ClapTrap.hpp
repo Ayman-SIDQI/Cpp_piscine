@@ -6,10 +6,11 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 21:29:00 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/07 12:16:33 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/10 13:30:00 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 #include <string>
 

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 21:29:00 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/11 21:55:05 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/07 15:27:20 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/12 16:18:07 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
-#include <string>
+#include "DiamondTrap.hpp"
 
-class ClapTrap
+int main ()
 {
-protected:
-	std::string	name;
-	int			hp;
-	int			ep;
-	int			att;
-public:
-	void attack(const std::string& target);
-	void beRepaired(unsigned int amount);
-	void takeDamage(unsigned int amount);
-
-	ClapTrap(std:: string Name);
-	ClapTrap(ClapTrap& other);
-	ClapTrap& operator=(ClapTrap& other);
-	ClapTrap();
-	~ClapTrap();
-};
+	std::string n = "AYMAN";
+	DiamondTrap robo(n);
+	robo.beRepaired(69);
+	robo.attack("BABAK");
+	robo.whoAmI();
+	// std::cout << robo.attack("MAMAK") << std::endl;
+	return (0);
+}

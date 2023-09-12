@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 21:35:58 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/07 12:22:20 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/09 19:57:49 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 
 ClapTrap::ClapTrap(std:: string Name) :
-	hp(10), ep(10), att(0), name(Name)
+	 name(Name), hp(10), ep(10), att(0)
 {
 	std::cout << "\033[1;32mConstruction of " << name << " complete!\033[0m" << std::endl;
 }
 
 ClapTrap::ClapTrap() :
-	hp(10), ep(10), att(0), name("Default")
+	name("Default"), hp(10), ep(10), att(0)
 {
 	std::cout << "\033[1;32mConstruction of Default is complete!\033[0m" << std::endl;
 }

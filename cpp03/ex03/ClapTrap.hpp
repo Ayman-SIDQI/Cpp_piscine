@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 21:29:00 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/11 21:55:05 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/11 22:08:55 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 
 class ClapTrap
 {
+
 protected:
 	std::string	name;
 	int			hp;
 	int			ep;
 	int			att;
+
 public:
 	void attack(const std::string& target);
 	void beRepaired(unsigned int amount);

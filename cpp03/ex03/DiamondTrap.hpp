@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 21:29:00 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/11 21:55:05 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/09 21:34:27 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/11 22:08:36 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include <string>
+#include "FragTrap.hpp"
 
-class ClapTrap
+class DiamondTrap: public FragTrap , public ScavTrap 
 {
-protected:
+private:
 	std::string	name;
-	int			hp;
-	int			ep;
-	int			att;
-public:
-	void attack(const std::string& target);
-	void beRepaired(unsigned int amount);
-	void takeDamage(unsigned int amount);
 
-	ClapTrap(std:: string Name);
-	ClapTrap(ClapTrap& other);
-	ClapTrap& operator=(ClapTrap& other);
-	ClapTrap();
-	~ClapTrap();
+public:
+	DiamondTrap();
+	DiamondTrap(std::string Name);
+	~DiamondTrap();
+	DiamondTrap(DiamondTrap& other);
+	DiamondTrap&	operator=(DiamondTrap& other);
+	void whoAmI();
 };
+
+// std::ostream& operator<<(std::ostream& o, DiamondTrap const & rh);

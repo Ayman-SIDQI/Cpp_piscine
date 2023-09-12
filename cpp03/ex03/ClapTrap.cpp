@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 21:35:58 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/09 19:56:42 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/10 22:26:36 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->ep > 0 && hp > 0)
 	{
-		std::cout << "ClapTrap" << name \
-		<< " repaired himself " << amount << std::endl;
+		std::cout << "ClapTrap " << name << " repaired himself " << amount << std::endl;
 		hp += amount;
 		ep--;
 	}
@@ -57,7 +56,7 @@ ClapTrap::ClapTrap(std:: string Name) :
 }
 
 ClapTrap::ClapTrap() :
-	 name("Default"), hp(10), ep(10), att(0)
+	name("Default"), hp(10), ep(10), att(0)
 {
 	std::cout << "\033[1;32mConstruction of Default is complete!\033[0m" << std::endl;
 }

@@ -6,11 +6,13 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:34:30 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/11 22:01:36 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/12 15:04:54 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+const int    ScavTrap::EP = 50;
 
 ScavTrap::ScavTrap() : ClapTrap()
 {

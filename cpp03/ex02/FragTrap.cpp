@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 15:34:30 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/11 22:01:36 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/08 20:11:59 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/11 22:03:59 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	hp = 100;
-	ep = 50;
-	att = 20;
+	ep = 100;
+	att = 30;
 	std::cout << "\033[1;32mConstruction of Default is complete!\033[0m" << std::endl;
 }
-ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
+FragTrap::FragTrap(std::string Name) : ClapTrap(Name)
 {
 	hp = 100;
-	ep = 50;
-	att = 20;
+	ep = 100;
+	att = 30;
 	std::cout << "\033[1;32mConstruction of " << name << " is complete!\033[0m" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(ScavTrap& other)
+FragTrap& FragTrap::operator=(FragTrap& other)
 {
 	hp = other.hp;
 	ep = other.ep;
@@ -36,31 +36,30 @@ ScavTrap& ScavTrap::operator=(ScavTrap& other)
 	return (*this);
 }
 
-ScavTrap::ScavTrap(ScavTrap& other)
+FragTrap::FragTrap(FragTrap& other)
 {
 	*this = other;
 	std::cout << "Copy constructor called!" << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
 	std::cout << "\033[1;31mDestruction!\033[0m" << std::endl;
 }	
 
-void ScavTrap::attack(const std::string& target)
-{
-	if (this->ep > 0 && hp > 0)
-	{
-		std::cout << "ScavTrap " << name << " attacks " \
-		<< target << ", causing them -" << att << std::endl;
-		ep--;
-	}
-	else 
-		std::cout << "ScavTrap is unresponsive..." << std::endl; 
-}
+// void FragTrap::attack(const std::string& target)
+// {
+// 	if (this->ep > 0 && hp > 0)
+// 	{
+// 		std::cout << "FragTrap " << name << " attacks " \
+// 		<< target << ", causing them -" << att << std::endl;
+// 		ep--;
+// 	}
+// 	else 
+// 		std::cout << "FragTrap is unresponsive..." << std::endl; 
+// }
 
-void ScavTrap::guardGate()
+void FragTrap::highFivesGuys()
 {
-	std::cout << "\033[1;33m" << name << "'s in Gate Keeper mode!\033[0m" << std::endl;
+	std::cout << "\033[1;34m" << name << " is requesting a high five! 👋\033[0m" << std::endl;
 }
-
