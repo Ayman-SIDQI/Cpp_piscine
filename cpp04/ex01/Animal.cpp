@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:34:01 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/24 14:57:37 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/09/27 22:13:20 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Animal::makeSound() const
 {
-	std::cout << "*Animal Sounds* 👉👈" << std::endl;
+	std::cout << "Animal random arbitrary sound" << std::endl;
 }
 
 std::string	Animal::getType() const
@@ -22,9 +22,9 @@ std::string	Animal::getType() const
 	return (type);
 }
 
-Animal::Animal()
+Animal::Animal() :
+	type("Animal")
 {
-	type = "Animal";
 	std::cout << "\033[1;32mAnimal constructor called...\033[0m" << std::endl;
 }
 

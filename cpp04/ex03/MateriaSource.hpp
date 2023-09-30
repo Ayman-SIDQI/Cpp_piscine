@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 20:57:32 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 19:15:16 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/28 15:57:41 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/28 21:52:40 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "Animal.hpp"
-#include "Cat.hpp"
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
-
-class Dog : public Animal
+class MateriaSource : public IMateriaSource
 {
+private:
+	AMateria	*_Materia_arr[4];
 public:
-	Dog();
-	~Dog();
-	Dog(std::string Name);
-	Dog(Dog& other);
-	Dog&       operator=(Dog& other);
-
-	void	makeSound()	const;
+	MateriaSource();
+	MateriaSource(MateriaSource& other);
+	~MateriaSource();
+	MateriaSource& operator=(MateriaSource& other);
+	void learnMateria(AMateria*);
+	AMateria* createMateria(std::string const & type);
 };

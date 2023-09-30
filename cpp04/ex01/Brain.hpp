@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 20:57:32 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 19:15:16 by asidqi           ###   ########.fr       */
+/*   Created: 2023/09/23 23:02:51 by asidqi            #+#    #+#             */
+/*   Updated: 2023/09/27 01:22:40 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Animal.hpp"
-#include "Cat.hpp"
 
-
-class Dog : public Animal
+class Brain
 {
+protected:
+	std::string	_ideas[100];
 public:
-	Dog();
-	~Dog();
-	Dog(std::string Name);
-	Dog(Dog& other);
-	Dog&       operator=(Dog& other);
-
-	void	makeSound()	const;
+	Brain();
+	virtual	~Brain();
+	Brain(std::string ideas[100]);
+	Brain(Brain& other);
+	Brain&       operator=(Brain& other);
 };
