@@ -6,23 +6,22 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:02:57 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/29 15:29:20 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/02 18:52:38 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure() : 
-	AMateria("cure"), type("cure")
+	AMateria("cure")
 {
 	// std::cout << "Cure Default constructor called" << std::endl;
 }
 
 Cure::Cure(Cure const & src) : 
-	AMateria("cure"), type("cure")
+	AMateria(src.getType())
 {
 	// std::cout << "Cure Copy constructor called" << std::endl;
-	*this = src;
 }
 
 Cure& Cure::operator=(Cure const &other)
@@ -36,7 +35,7 @@ Cure& Cure::operator=(Cure const &other)
 
 Cure* Cure::clone() const
 {
-	return (new Cure(*this));
+	return (new Cure);
 }
 
 Cure::~Cure()

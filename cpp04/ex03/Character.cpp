@@ -6,21 +6,21 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:32:06 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/28 22:53:54 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/02 22:32:45 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
-AMateria	**Character::_unequiped_inv = NULL;
-int 		Character::_inventory_size = 0;
 
 Character::Character(std::string const &name) :
 	_name(name)
 {
 	// std::cout << "Character paramiter constructor called" << std::endl;
 	for (int i = 0; i < 4 ; i++)
+	{
 		_inventory[i] = NULL;
+		_unequiped_inv[i] = NULL;
+	}
 	
 }
 Character::Character() :
@@ -28,7 +28,10 @@ Character::Character() :
 {
 	// std::cout << "Character Default constructor called" << std::endl;
 	for (int i = 0; i < 4 ; i++)
-		_inventory[i] = NULL;	
+	{
+		_inventory[i] = NULL;
+		_unequiped_inv[i] = NULL;
+	}
 }
 Character::~Character()
 {
@@ -36,9 +39,13 @@ Character::~Character()
 	for (int i = 0; i < 4 ; i++)
 	{
 		if (_inventory[i])
+		{
 			delete _inventory[i];
+			_inventory[i] = NULL;
+		}
+		if (_unequiped_inv[i])
+			delete _unequiped_inv[i];
 	}
-	// delete unequiped_inv fl main
 }
 Character&	Character::operator=(Character& other)
 {
@@ -47,7 +54,12 @@ Character&	Character::operator=(Character& other)
 	for (int i = 0; i < 4; i++)
 	{
 		if (_inventory[i])
+		{
 			delete _inventory[i];
+			_inventory[i] = NULL;
+		}
+		if (_unequiped_inv[i])
+			delete _unequiped_inv[i];
 	}
 	_name = other._name;
 	for (int i = 0; i < 4; i++)
@@ -60,10 +72,15 @@ Character&	Character::operator=(Character& other)
 	return (*this);
 }
 
-Character::Character(Character& other)
+Character::Character(Character& other) :
+	_name(other._name)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << "Character inventory[" << i << "] = other.inventory[" << i << "]" << std::endl;
+		this->_inventory[i] = other._inventory[i]->clone();
+	}
 	// std::cout << "Character copy constructor called" << std::endl;
-	*this = other;
 }
 
 std::string const& Character::getName() const
@@ -79,26 +96,30 @@ void Character::equip(AMateria* m)
 	{
 		if (!_inventory[i])
 		{
-			this->_inventory[i] = m;
+			this->_inventory[i] = m->clone();
+			std::cout << "Equiped " << m->getType() << " to " << _name << std::endl;
 			return ;
 		}
 	}
+	std::cout << "Inventory is full" << std::endl;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || _inventory[idx] == NULL)
 		return ;
-	//save unequiped materia
-	AMateria **new_unq_inv = new AMateria*[_inventory_size + 1];
-	for (int i = 0; i < _inventory_size; i++)
-		new_unq_inv[i] = _unequiped_inv[i];
-	new_unq_inv[_inventory_size] = _inventory[idx];
-	_inventory_size++;
-	if (_unequiped_inv)
-		delete [] _unequiped_inv;
-	_inventory[idx] = NULL;
+	_unequiped_inv[idx] = _inventory[idx]->clone();
+	_inventory[idx] = NULL;// possible memory leak because the materia after it is not shifted
+	if (idx != 3)
+	{
+		for (int i = idx; i < 3; i++)
+		{
+			_inventory[i] = _inventory[i + 1];
+			_inventory[i + 1] = NULL;
+		}
+	}
 }
+
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx > 3)

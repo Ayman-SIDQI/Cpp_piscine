@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 22:12:01 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/28 22:31:25 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/02 18:46:51 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ICharacter;
 class AMateria
 {
 protected:
-	std::string const type;
+	std::string type;
 public:
 	AMateria(std::string const & type);
 	AMateria();

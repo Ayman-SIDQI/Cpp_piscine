@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:04:10 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 15:04:34 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/02 18:45:05 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 class Cure : public AMateria
 {
-protected:
-	std::string type;
 public:
 	Cure();
 	Cure(Cure const & src);

@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:27:47 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/29 17:01:58 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/02 22:32:11 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,27 +106,29 @@ void	test1()
 
 void	test2()
 {
-	Character *c = new Character;
-	Character *c2 = new Character;
+	// Character *c = new Character;
+	// Character *c2 = new Character;
 	Ice *ice = new Ice;
-	c->equip(ice);
+	Character c;
+	Character c2;
+	c.equip(ice);
 	
-	c->equip(ice);
-	c->equip(ice);
-	c->equip(ice);
-	c->equip(new Ice);
-	c->equip(new Ice);
-	c->equip(new Ice);
-	c->equip(ice);
-	c->unequip(0);
-	c->unequip(1);
-	c->unequip(2);
-	c->unequip(3);
-	c->unequip(4);
-	c->unequip(5);
-	*c = *c2;
-	delete c;
-	delete c2;
+	c.equip(ice);
+	c.equip(ice);
+	c.equip(ice);
+	c.equip(new Ice);
+	c.equip(new Ice);
+	c.equip(new Ice);
+	c.equip(ice);
+	c.unequip(0);
+	c.unequip(1);
+	c.unequip(2);
+	c.unequip(3);
+	c.unequip(4);
+	c.unequip(5);
+	// c = c2;
+	// delete c;
+	// delete c2;
 }
 
 void	test3()
@@ -272,27 +274,28 @@ void	test10()
 
 int main()
 {
-	std::cout << "--------- test 1 ----------" << std::endl;
-	test1();
+	// std::cout << "--------- test 1 ----------" << std::endl;
+	// test1();
 	std::cout << "--------- test 2 ----------" << std::endl;
 	test2();
 	std::cout << "--------- test 3 ----------" << std::endl;
 	test3();
-	std::cout << "--------- test 4 ----------" << std::endl;
-	test4();
-	std::cout << "--------- test 5 ----------" << std::endl;
-	test5();
-	std::cout << "--------- test 6 ----------" << std::endl;
-	test6();
-	std::cout << "--------- test 7 ----------" << std::endl;
-	test7();
-	std::cout << "--------- test 8 ----------" << std::endl;
-	test8();
-	std::cout << "--------- test 9 ----------" << std::endl;
-	test9();
-	std::cout << "--------- test 10 ----------" << std::endl;
-	test10();
-	std::cout << "--------- test LEAKS ----------" << std::endl;
-	system("leaks -q a.out");
+	// std::cout << "--------- test 4 ----------" << std::endl;
+	// test4();
+	// std::cout << "--------- test 5 ----------" << std::endl;
+	// test5();
+	// std::cout << "--------- test 6 ----------" << std::endl;
+	// test6();
+	// std::cout << "--------- test 7 ----------" << std::endl;
+	// test7();
+	// std::cout << "--------- test 8 ----------" << std::endl;
+	// test8();
+	// std::cout << "--------- test 9 ----------" << std::endl;
+	// test9();
+	// std::cout << "--------- test 10 ----------" << std::endl;
+	// test10();
+	// std::cout << "--------- test LEAKS ----------" << std::endl;
+
+	// system("leaks -q Materia");
 	return 0;
 }

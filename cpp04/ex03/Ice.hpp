@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 00:29:18 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 15:04:12 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/02 18:45:13 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 class Ice : public AMateria
 {
-protected:
-	std::string type;
 public:
 	Ice();
 	Ice(Ice const & src);
