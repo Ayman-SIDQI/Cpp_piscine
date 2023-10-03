@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:27:47 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/02 22:32:11 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/03 22:38:30 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,28 +106,34 @@ void	test1()
 
 void	test2()
 {
-	// Character *c = new Character;
-	// Character *c2 = new Character;
+	Character *c = new Character;
+	Character *c2 = new Character;
 	Ice *ice = new Ice;
-	Character c;
-	Character c2;
-	c.equip(ice);
+	Ice *a = new Ice;
+	Ice *b = new Ice;
+	Ice *d = new Ice;
 	
-	c.equip(ice);
-	c.equip(ice);
-	c.equip(ice);
-	c.equip(new Ice);
-	c.equip(new Ice);
-	c.equip(new Ice);
-	c.equip(ice);
-	c.unequip(0);
-	c.unequip(1);
-	c.unequip(2);
-	c.unequip(3);
-	c.unequip(4);
-	c.unequip(5);
-	// c = c2;
-	// delete c;
+	c->equip(ice);
+	c->equip(ice);
+	c->equip(ice);
+	c->equip(ice);
+	c->equip(a);
+	c->equip(b);
+	c->equip(d);
+	c->equip(ice);
+	c->unequip(0);
+	c->unequip(1);
+	c->unequip(2);
+	c->unequip(3);
+	c->unequip(4);
+	c->unequip(5);
+	c = c2;
+	delete c;
+	delete a;
+	delete b;
+	delete d;
+	delete ice;
+	std::cout << "HAHAHAHAH ADRESS:	" << c << std::endl;
 	// delete c2;
 }
 
@@ -168,25 +174,8 @@ void	test5()
 	delete c;
 }
 
+
 void	test6()
-{
-	AMateria *a = new Ice;
-	Character *c = new Character;
-
-	c->equip(a);
-	c->unequip(0);
-	c->equip(a);
-	c->unequip(1);
-	c->equip(a);
-	c->unequip(2);
-	c->equip(a);
-	c->unequip(3);
-	c->unequip(4);
-	c->equip(a);
-	delete c;
-}
-
-void	test7()
 {
 	Character a("a");
 	a.equip(new Cure());
@@ -209,7 +198,7 @@ void	test7()
 	b.use(3, b);
 }
 
-void test8()
+void test7()
 {
 	Character a("a");
 	
@@ -233,7 +222,7 @@ void test8()
 	b.use(1, b);
 }
 
-void	test9()
+void	test8()
 {
     ICharacter *i = new Character("bob");
     
@@ -249,7 +238,7 @@ void	test9()
 	delete i;
 }
 
-void	test10()
+void	test9()
 {
 	Character a("a");
 	a.equip(new Cure());
@@ -274,12 +263,47 @@ void	test10()
 
 int main()
 {
+	// Character a("alpha");
+	// Character b(a);
+	
+	// a.equip(new Cure());
+	// a.equip(new Cure());
+	// a.equip(new Cure());
+	// a.equip(new Cure());
+	// a.equip(new Cure());
+	// a.unequip(0);
+	// a.unequip(1);
+	// a.unequip(2);
+	// a.unequip(3);
+	// a.unequip(4);
+
+
+
+
+
+
+
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
 	// std::cout << "--------- test 1 ----------" << std::endl;
 	// test1();
-	std::cout << "--------- test 2 ----------" << std::endl;
-	test2();
-	std::cout << "--------- test 3 ----------" << std::endl;
-	test3();
+	// std::cout << "--------- test 2 ----------" << std::endl;
+	// test2();
+	// std::cout << "--------- test 3 ----------" << std::endl;
+	// test3();
 	// std::cout << "--------- test 4 ----------" << std::endl;
 	// test4();
 	// std::cout << "--------- test 5 ----------" << std::endl;
@@ -292,8 +316,6 @@ int main()
 	// test8();
 	// std::cout << "--------- test 9 ----------" << std::endl;
 	// test9();
-	// std::cout << "--------- test 10 ----------" << std::endl;
-	// test10();
 	// std::cout << "--------- test LEAKS ----------" << std::endl;
 
 	// system("leaks -q Materia");

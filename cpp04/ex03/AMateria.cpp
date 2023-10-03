@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:07:05 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/02 21:54:08 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/03 15:43:28 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ AMateria& AMateria::operator=(AMateria& other)
 std::string const & AMateria::getType() const
 {
 	return (type);
-}
-
-AMateria* AMateria::clone() const
-{
-    return (AMateria*)this;
 }
 
 void AMateria::use(ICharacter& target)

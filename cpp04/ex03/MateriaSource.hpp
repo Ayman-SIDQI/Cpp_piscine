@@ -6,10 +6,11 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:57:41 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/28 21:52:40 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/02 23:24:11 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 

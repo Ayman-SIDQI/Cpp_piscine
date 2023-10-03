@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 00:31:52 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/02 18:52:44 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/03 22:34:29 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ Ice::Ice() :
 	// std::cout << "Ice Default constructor called" << std::endl;
 }
 
-Ice::Ice(Ice const & src) : 
-	AMateria(src.getType())
+Ice::Ice(Ice const & other) : 
+	AMateria(other.getType())
 {
+	*this = other;
 	// std::cout << "Ice Copy constructor called" << std::endl;
 }
 
 Ice& Ice::operator=(Ice const &other)
 {
-	// std::cout << "Ice Assignment operator called" << std::endl;
 	if (this == &other)
 		return (*this);
 	type = other.type;
@@ -35,7 +35,8 @@ Ice& Ice::operator=(Ice const &other)
 
 Ice* Ice::clone() const
 {
-	return (new Ice);
+	return (new Ice(*this));
+	// return (new Ice);
 }
 
 
