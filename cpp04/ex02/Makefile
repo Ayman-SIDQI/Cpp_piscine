@@ -6,12 +6,12 @@
 #    By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:27:06 by asidqi            #+#    #+#              #
-#    Updated: 2023/09/23 23:22:56 by asidqi           ###   ########.fr        #
+#    Updated: 2023/10/04 10:42:32 by asidqi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=c++
-FLAGS=-Wall -Wextra -Werror -Wshadow -std=c++98 
+FLAGS=-Wall -Wextra -Werror  -std=c++98 
 NAME=Brain
 
 SRC=$(wildcard *.cpp)

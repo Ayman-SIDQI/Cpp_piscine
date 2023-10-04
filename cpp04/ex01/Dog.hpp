@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:57:32 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 19:14:52 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:18:23 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ private:
 public:
 	Dog();
 	~Dog();
-	Dog(std::string Name);
-	Dog(Dog& other);
-	Dog&       operator=(Dog& other);
+	// Dog(std::string Name);
+	Dog(Dog const & other);
+	Dog&       operator=(Dog const & other);
 
 	void	makeSound()	const;
 };

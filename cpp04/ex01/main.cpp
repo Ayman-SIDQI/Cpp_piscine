@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:27:47 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 23:07:02 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 12:07:19 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,45 +46,48 @@
 // #include "Dog.hpp"
 // #include "Cat.hpp"
 
-// void	test()
-// {
-// 	Animal	*ani[100];
+void	test()
+{
+	Animal	*ani[100];
 	
-// 	for (size_t i = 0; i < 100; i++)
-// 	{
-// 		if (i < 50)
-// 			ani[i] = new Dog();
-// 		else
-// 			ani[i] = new Cat();
-// 	}
+	for (size_t i = 0; i < 100; i++)
+	{
+		if (i < 50)
+			ani[i] = new Dog();
+		else
+			ani[i] = new Cat();
+	}
 	
-// 	for (size_t i = 0; i < 100; i++)
-// 		std::cout << ani[i]->getType() << std::endl;
+	for (size_t i = 0; i < 100; i++)
+		std::cout << ani[i]->getType() << std::endl;
 		
-// 	for (size_t i = 0; i < 100; i++)
-// 		delete ani[i];
-// 	const Animal* i = new Cat();
-// 	const Animal* a = new Cat();
-// 	const Animal* b = new Cat();
+	for (size_t i = 0; i < 100; i++)
+		delete ani[i];
 
-// 	i = a;
-// 	i = b;
+}
+void	test2()
+{
+	Animal* i = new Cat();
+	Animal* a = new Cat();
+	Animal* b = new Cat();
 
-// 	delete b;
-// 	delete a;
-// 	delete i;
-// }
+	*i = *a;
+	*i = *b;
 
-// int main()
-// {
-// 	// const Animal* j = new Dog();
-// 	// delete j;//should not create a leak
-// 	// delete a;
-// 	// delete b;
+	delete i;
+	delete a;
+	delete b;
+}
+
+int main()
+{
+	const Animal* j = new Dog();
+	delete j;//should not create a leak
 	
-// 	test();
-// 	system("leaks Brain");
+	test();
+	test2();
+	system("leaks Brain");
 
-// 	return	0;
-// }
+	return	0;
+}
 

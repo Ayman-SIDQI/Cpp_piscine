@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:57:41 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/02 23:24:11 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:21:31 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ private:
 	AMateria	*_Materia_arr[4];
 public:
 	MateriaSource();
-	MateriaSource(MateriaSource& other);
+	MateriaSource(MateriaSource const & other);
 	~MateriaSource();
-	MateriaSource& operator=(MateriaSource& other);
+	MateriaSource& operator=(MateriaSource const & other);
 	void learnMateria(AMateria*);
 	AMateria* createMateria(std::string const & type);
 };

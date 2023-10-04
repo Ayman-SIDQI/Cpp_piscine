@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:33:53 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/24 19:23:52 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:20:19 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ protected:
 public:
 	Animal();
 	virtual ~Animal();
-	Animal(std::string Name);
-	Animal(Animal& other);
-	Animal&       operator=(Animal& other);
+	// Animal(std::string Name);
+	Animal(Animal const & other);
+	Animal&       operator=(Animal const & other);
 	virtual void	makeSound()		const = 0;
 	std::string	getType()	const;
 };

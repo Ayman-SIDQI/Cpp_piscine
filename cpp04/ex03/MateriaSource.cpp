@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:38:50 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/03 19:29:48 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:21:43 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ MateriaSource::MateriaSource()
 		_Materia_arr[i] = NULL;
 }
 
-MateriaSource::MateriaSource(MateriaSource& other)
+MateriaSource::MateriaSource(MateriaSource const & other)
 {
 	// std::cout << "MaterialSource copy constructor called!" << std::endl;
 	*this = other;
@@ -34,7 +34,7 @@ MateriaSource::~MateriaSource()
 	}
 }
 
-MateriaSource& MateriaSource::operator=(MateriaSource& other)
+MateriaSource& MateriaSource::operator=(MateriaSource const & other)
 {
 	if (this == &other)
 		return (*this);

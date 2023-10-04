@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:56:42 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 01:37:34 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:15:08 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ protected:
 public:
 	Cat();
 	~Cat();
-	Cat(std::string Type);
-	Cat(Cat& other);
-	Cat&       operator=(Cat& other);
+	// Cat(std::string Type);
+	Cat(Cat const & other);
+	Cat&       operator=(Cat const & other);
 
 	void	makeSound()	const;
 };

@@ -6,20 +6,20 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:02:57 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/03 15:50:47 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:40:07 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure() : 
-	AMateria("cure")
+	AMateria()
 {
 	// std::cout << "Cure Default constructor called" << std::endl;
 }
 
 Cure::Cure(Cure const & other) : 
-	AMateria(other.getType())
+	AMateria()
 {
 	*this = other;
 	// std::cout << "Cure Copy constructor called" << std::endl;

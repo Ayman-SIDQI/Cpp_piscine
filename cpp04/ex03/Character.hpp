@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:32:40 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/03 15:20:42 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:45:35 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ private:
 public:
 	Character(std::string const & name);
 	Character();
-	Character(Character& other);
-	Character&	operator=(Character& other);
+	Character(Character const & other);
+	Character&	operator=(Character const & other);
 	~Character();
 	std::string const & getName() const;
 	void equip(AMateria* m);

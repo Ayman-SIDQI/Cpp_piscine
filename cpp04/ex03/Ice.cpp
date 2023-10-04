@@ -6,20 +6,20 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 00:31:52 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/03 22:34:29 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:40:24 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
 Ice::Ice() : 
-	AMateria("ice")
+	AMateria()
 {
 	// std::cout << "Ice Default constructor called" << std::endl;
 }
 
 Ice::Ice(Ice const & other) : 
-	AMateria(other.getType())
+	AMateria()
 {
 	*this = other;
 	// std::cout << "Ice Copy constructor called" << std::endl;

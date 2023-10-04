@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:02:51 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 01:22:40 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:17:43 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ public:
 	Brain();
 	virtual	~Brain();
 	Brain(std::string ideas[100]);
-	Brain(Brain& other);
-	Brain&       operator=(Brain& other);
+	Brain(Brain const & other);
+	Brain&       operator=(Brain const & other);
 };

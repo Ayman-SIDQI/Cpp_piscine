@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:57:32 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 01:37:34 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:13:20 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ protected:
 public:
 	Dog();
 	~Dog();
-	Dog(std::string Name);
+	// Dog(std::string Name);
 	Dog(Dog& other);
 	Dog&       operator=(Dog& other);
 

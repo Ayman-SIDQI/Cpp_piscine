@@ -6,12 +6,12 @@
 #    By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:27:06 by asidqi            #+#    #+#              #
-#    Updated: 2023/09/23 23:23:29 by asidqi           ###   ########.fr        #
+#    Updated: 2023/10/04 11:13:17 by asidqi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=c++
-FLAGS=-Wall -Wextra -Werror -Wshadow -std=c++98 
+FLAGS=-Wall -Wextra -Werror  -std=c++98 #-fsanitize=address -g3
 NAME=Animal
 
 SRC=$(wildcard *.cpp)

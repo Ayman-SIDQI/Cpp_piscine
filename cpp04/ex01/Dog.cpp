@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 21:38:59 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 22:45:37 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:27:18 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	Dog::makeSound()	const
 }
 
 Dog::Dog() :
-	 Animal("Dog"), _dome(new Brain)
+	Animal(), _dome(new Brain)
 {
 	std::cout << "\033[1;32mDOGGO constructor called...\033[0m" << std::endl;
 }
 
-Dog&	Dog::operator=(Dog& other)
+Dog&	Dog::operator=(Dog const & other)
 {
 	if (this == &other)
 		return (*this);
@@ -34,17 +34,17 @@ Dog&	Dog::operator=(Dog& other)
 	return (*this);
 }
 
-Dog::Dog(Dog& other)
+Dog::Dog(Dog const & other)
 {
 	*this = other;
 	std::cout << "\033[1;32mCopyDog constructor called...\033[0m" << std::endl;
 }
 
-Dog::Dog(std::string Type) :
-	Animal(Type), _dome(new Brain)
-{
-	std::cout << "\033[1;32mDog param-constructor called...\033[0m" << std::endl;
-}
+// Dog::Dog(std::string Type) :
+// 	Animal(Type), _dome(new Brain)
+// {
+// 	std::cout << "\033[1;32mDog param-constructor called...\033[0m" << std::endl;
+// }
 
 Dog::~Dog()
 {

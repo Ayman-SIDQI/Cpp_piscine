@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 21:38:59 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/27 01:58:14 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:25:28 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,23 @@ Dog::Dog()
 	std::cout << "\033[1;32mDOGGO constructor called...\033[0m" << std::endl;
 }
 
-Dog&	Dog::operator=(Dog& other)
+Dog&	Dog::operator=(Dog const & other)
 {
 	type = other.type;
 	return (*this);
 }
 
-Dog::Dog(Dog& other)
+Dog::Dog(Dog const & other)
 {
 	*this = other;	
 	std::cout << "\033[1;32mCopyDog constructor called...\033[0m" << std::endl;
 }
 
-Dog::Dog(std::string Type) :
-	type(Type)
-{
-	std::cout << "\033[1;32mDog param-constructor called...\033[0m" << std::endl;
-}
+// Dog::Dog(std::string Type) :
+// 	Animal(Type)
+// {
+// 	std::cout << "\033[1;32mDog param-constructor called...\033[0m" << std::endl;
+// }
 
 Dog::~Dog()
 {

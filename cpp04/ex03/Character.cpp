@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 23:51:39 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/03 22:29:03 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/04 19:45:16 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Character::Character(void) :
 	}
 }
 
-Character::Character(Character& other) : 
+Character::Character(Character const & other) : 
 	_name(other._name)
 {
 	for (int i = 0; i < 4; i++)
@@ -48,7 +48,7 @@ Character::Character(Character& other) :
 	}
 }
 
-Character&	Character::operator=(Character& other)
+Character&	Character::operator=(Character const & other)
 {
 	for (int i = 0; i < 4; i++)
 	{
