@@ -6,24 +6,22 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:38:50 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/13 19:12:46 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/21 15:26:53 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
- Bureaucrat::Bureaucrat() : 
-    _name("Basic Form"), _grade(150)
- {
+Bureaucrat::Bureaucrat() : _name("Basic Form"), _grade(150)
+{
     std::cout << _name << "Constructed!" << std::endl;
- }
-Bureaucrat::Bureaucrat(std::string const &n, int g) :
-    _name(n), _grade(g)
+}
+Bureaucrat::Bureaucrat(std::string const &n, int g) : _name(n), _grade(g)
 {
     if (_grade > 150)
-        throw (Bureaucrat::GradeTooLowException());
+        throw(Bureaucrat::GradeTooLowException());
     if (_grade < 1)
-        throw (Bureaucrat::GradeTooHighException());
+        throw(Bureaucrat::GradeTooHighException());
     std::cout << _name << "Constructed!" << std::endl;
 }
 
@@ -33,20 +31,22 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other)
     *this = other;
 }
 
-std::string Bureaucrat::getName()  const
+std::string Bureaucrat::getName() const
 {
-    return (_name);    
+    return (_name);
 }
-int Bureaucrat::getGrade()   const
+int Bureaucrat::getGrade() const
 {
-    return (_grade);    
+    return (_grade);
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException() : std::runtime_error("Grade Too d*mn high!")
-{}
+{
+}
 
 Bureaucrat::GradeTooLowException::GradeTooLowException() : std::runtime_error("Grade Too d*mn low!")
-{}
+{
+}
 
 Bureaucrat::~Bureaucrat()
 {
@@ -63,7 +63,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other)
     return (*this);
 }
 
-std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)
 {
     o << rhs.getName() + ",  bureaucrat grade " << rhs.getGrade();
     return (o);
