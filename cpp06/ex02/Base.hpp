@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 13:22:23 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/25 19:51:14 by asidqi           ###   ########.fr       */
+/*   Created: 2023/10/26 11:21:12 by asidqi            #+#    #+#             */
+/*   Updated: 2023/10/26 11:21:48 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
-#include <string>
-#include <limits>
-#include <iomanip>
-#include <sstream>
 
-class ScalarConverter 
+class Base
 {
-private:
-    ScalarConverter();
-    ScalarConverter(ScalarConverter const &);
-    ScalarConverter &operator=(ScalarConverter const &);
-    ~ScalarConverter();
 public:
-    static void     convert(std::string const &);
-    static double   detectError(std::string const t);
+	virtual ~Base();
 };

@@ -6,34 +6,13 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 17:58:11 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/23 22:17:41 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/26 11:23:05 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-class Base
-{
-public:
-	virtual ~Base();
-};
-
-Base::~Base()
-{
-	std::cout << "Base Destructed!" << std::endl;
-}
-
-class A : public Base
-{
-};
-
-class B : public Base
-{
-};
-
-class C : public Base
-{
-};
+#include"A.hpp"
+#include"B.hpp"
+#include"C.hpp"
 
 Base *generate(void)
 {
@@ -111,5 +90,6 @@ int main(void)
 	identify(ptr);
 	identify(rptr);
 	delete ptr;
+	delete rptr;
 	return 0;
 }

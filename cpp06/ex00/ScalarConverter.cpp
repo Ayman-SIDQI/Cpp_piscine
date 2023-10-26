@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:22:24 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/23 16:36:45 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/10/25 19:52:44 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ double ScalarConverter::detectError(std::string const t)
     const char* tc = t.c_str();
     char*   end;
     double  res;
+    if (t.length() == 1 && isprint(t[0]))
+        return (res = strtod(tc, &end));
     res = strtod(tc, &end);
     if (*end != '\0' && *end != 'f')
         throw std::runtime_error("");
@@ -38,7 +40,12 @@ void    charCase(double r)
     if (!isprint(r))
         std::cout << "char: " << "Non displayable" << std::endl;
     else
-        std::cout << "char: " << static_cast<char>(r) << std::endl;
+        std::cout << "char: '" << static_cast<char>(r) << "'" << std::endl;
+}
+
+int retlen(double r, int len)
+{
+    return ((len - r - 1));
 }
 
 void    intCase(double r)
@@ -51,28 +58,29 @@ void    intCase(double r)
 
 void    floatCase(double r, int len)
 {
-    if (r < std::numeric_limits<float>::min() || r > std::numeric_limits<int>::max())
-    {
-        std::cout << "float: " << "nanf" << std::endl;
-        return ;
-    }
-    else if (len > 9)
-        std::cout << "float: " << std::scientific <<std::setprecision(4) << static_cast<float>(r) << 'f' << std::endl;
+    std::stringstream ss;
+    ss << r;
+    std::string str = ss.str();
+
+    if (len > 9)
+        std::cout << "float: " << std::fixed <<std::scientific <<std::setprecision(4) << static_cast<float>(r) << 'f' << std::endl;
     else
-        std::cout << "float: " <<std::setprecision(len) << static_cast<float>(r) << 'f' << std::endl;
+        std::cout << "float: " << std::fixed 
+        << ( (str.find('.') == std::string::npos) ? std::setprecision(1) : std::setprecision(retlen(std::to_string(r).find('.'), len))) << static_cast<float>(r) << 'f' << std::endl;
 }
 
 void    doubleCase(double r, int len)
 {
-    if (r < std::numeric_limits<double>::min() || r > std::numeric_limits<int>::max())
-    {
-        std::cout << "double: " << "nan" << std::endl;
-        return ;
-    }
-    else if (len > 17)
-        std::cout << "double: " << std::scientific << std::setprecision(4) << static_cast<double>(r) << std::endl;
+    std::stringstream ss;
+    ss << r;
+    std::string str = ss.str();
+
+    if (len > 17)
+        std::cout << "double: " << std::fixed << std::scientific << std::setprecision(4) << static_cast<double>(r) << std::endl;
     else
-        std::cout << "double: " << std::setprecision(16) << static_cast<double>(r) << std::endl;
+        std::cout << "double: " << std::fixed 
+        << ( (str.find('.') == std::string::npos) ? std::setprecision(1) : std::setprecision(retlen(std::to_string(r).find('.'), len))) << static_cast<double>(r) << std::endl;
+
 }
 
 
@@ -89,6 +97,7 @@ void ScalarConverter::convert(std::string const &t)
     try
     {
         double      res;
+
         std::string str;
         res = ScalarConverter::detectError(t);
         printValue(res, t.length());
