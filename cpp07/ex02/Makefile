@@ -1,6 +1,6 @@
 CC=c++
 FLAGS=-Wall -Wextra -Werror  -std=c++98 #-fsanitize=address -g3
-NAME=Iter
+NAME=Array
 
 SRC=$(wildcard *.cpp)
 

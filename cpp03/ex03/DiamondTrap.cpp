@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 12:35:55 by asidqi            #+#    #+#             */
-/*   Updated: 2023/09/12 16:47:11 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/05 12:40:42 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap& other)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout <<"Name: " << this->name << "\n" <<"clapTrap::name: " << (this->name + "_clap_name") << std::endl;
+	std::cout <<"Name: " << this->name << "\n" <<"clapTrap::name: " << ClapTrap::name << std::endl;
 }
 

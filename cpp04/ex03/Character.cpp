@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 23:51:39 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/04 19:45:16 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/09 17:50:36 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ Character::Character(std::string const & name) :
 	for (int i = 0; i < 4; i++)
 	{
 		_inventory[i] = NULL;
-		_unequiped_inv[i] = NULL;
 	}
+	_unequiped_inv = NULL;
 }
 
 Character::Character(void) : 
@@ -28,8 +28,8 @@ Character::Character(void) :
 	for (int i = 0; i < 4; i++)
 	{
 		_inventory[i] = NULL;
-		_unequiped_inv[i] = NULL;
 	}
+	_unequiped_inv = NULL;
 }
 
 Character::Character(Character const & other) : 
@@ -41,10 +41,6 @@ Character::Character(Character const & other) :
 			_inventory[i] = other._inventory[i]->clone();
 		else
 			_inventory[i] = NULL;
-		if (other._unequiped_inv[i])
-			_unequiped_inv[i] = other._unequiped_inv[i]->clone();
-		else
-			_unequiped_inv[i] = NULL;
 	}
 }
 
@@ -54,8 +50,6 @@ Character&	Character::operator=(Character const & other)
 	{
 		if (other._inventory[i])
 			_inventory[i] = other._inventory[i]->clone();
-		if (other._unequiped_inv[i])
-			_unequiped_inv[i] = other._unequiped_inv[i]->clone();
 	}
 	return (*this);
 }
@@ -66,13 +60,14 @@ Character::~Character(void)
 	{
 		if (_inventory[i])
 			delete _inventory[i];
-		if (_unequiped_inv[i])
-			delete _unequiped_inv[i];
 	}
+	delete _unequiped_inv;
 }
 
 void	Character::equip(AMateria* m)
 {
+	delete _unequiped_inv;
+	_unequiped_inv = NULL;
 	for (int i = 0; i < 4; i++)
 	{
 		if (!_inventory[i])
@@ -92,17 +87,10 @@ void	Character::unequip(int idx)
 		std::cout << "Invalid idx" << std::endl;
 		return ;
 	}
-	for (int i = 0; i < 4; i++)
-	{
-		if (!_unequiped_inv[i])
-		{
-			_unequiped_inv[i] = _inventory[idx];
-			_inventory[idx] = NULL;
-			std::cout << "Unequiped!" << std::endl;
-			return ;
-		}
-
-	}
+	_unequiped_inv = _inventory[idx];
+	_inventory[idx] = NULL;
+	std::cout << "Unequiped!" << std::endl;
+	return ;
 	std::cout << "Cannot unequipe!" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:01:47 by asidqi            #+#    #+#             */
-/*   Updated: 2023/11/09 19:54:11 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/10 18:19:32 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ public:
 	void		addNumber(std::list<unsigned int>::iterator beg, std::list<unsigned int>::iterator en/* , unsigned int size */);
 	int			shortestSpan( void );
 	int			longestSpan( void );
-	// std::list<unsigned int> getList() const;
+
 	
 };
-
-std::ostream &operator<<(std::ostream &o, Span const &rhs);

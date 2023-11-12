@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 21:52:10 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/26 11:39:18 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/01 18:44:09 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int main( void )
 {
     int a = 6;
     int b = 9;
-    std::cout << ::min(a, b) << "     " << ::max(a, b) << std::endl;
+    
+    std::cout << min<int>(a, b) << "     " << max(a, b) << std::endl; // explicit vs implicit instantiation
     ::swap(a, b);
     std::cout << a << "     " << b << std::endl;
     return 0;

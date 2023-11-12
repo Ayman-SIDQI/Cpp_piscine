@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asidqi <asidqi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:32:40 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/04 19:45:35 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/09 17:46:28 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Character : public ICharacter
 private:
 	std::string _name;
 	AMateria 	*_inventory[4];
-	AMateria 	*_unequiped_inv[4];
+	AMateria 	*_unequiped_inv;
 public:
 	Character(std::string const & name);
 	Character();

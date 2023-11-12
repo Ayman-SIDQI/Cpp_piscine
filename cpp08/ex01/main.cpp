@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:51:30 by asidqi            #+#    #+#             */
-/*   Updated: 2023/11/09 22:17:31 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/10 18:57:10 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@ int main( void )
 {
 	try
 	{
-		int N = 1000;
+		int N = 10;
 		Span stan(N);
 		// std::srand(std::time(NULL));
 
 		// std::list<unsigned int> lst;
 		// std::list<unsigned int> lst2;
 		// std::list<unsigned int>::iterator randVal = lst.begin();
-		// std::list<unsigned int>::iterator randVal2 = lst2.begin();
 
-		// for (int i = 0; i < 10; i++)
+		// for (int i = 0; i < N - 1; i++)
 		// {
-		// 	lst.push_back(std::rand());
-		// 	lst2.push_back(std::rand());
+		// 	unsigned int a = std::rand();
+		// 	lst.push_back(a);
 		// }
 		// std::list<unsigned int>::iterator brandVal = lst.begin();
-		// std::list<unsigned int>::iterator brandVal2 = lst2.begin();
-		// randVal = lst.end();
-		// randVal2 = lst2.end();
+		// for (randVal = lst.begin(); randVal != lst.end(); ++randVal)//print the values
+		// {
+		// 	std::cout << *randVal << std::endl;
+		// }
 		// stan.addNumber(brandVal, randVal);
-		// stan.addNumber(brandVal2, randVal2);
+		
 
 		
 		stan.addNumber(79);
