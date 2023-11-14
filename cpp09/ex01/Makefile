@@ -6,13 +6,13 @@
 #    By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 20:33:48 by asidqi            #+#    #+#              #
-#    Updated: 2023/11/14 13:10:18 by asidqi           ###   ########.fr        #
+#    Updated: 2023/11/13 21:30:38 by asidqi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=c++
 FLAGS=-Wall -Wextra -Werror  -std=c++98 #-fsanitize=address -g3
-NAME=btc
+NAME=RPN
 
 SRC=$(wildcard *.cpp)
 

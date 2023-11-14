@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 23:04:30 by asidqi            #+#    #+#             */
-/*   Updated: 2023/11/12 23:24:32 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/13 21:23:19 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,42 @@
 
 int main ( int ac, char **av )
 {
+	std::string line;
+	std::ifstream in(av[1]);
 	
 	if (ac != 2)
+	{
+		std::cout << "Error: could not open file." << std::endl;
 		return (1);
-			// std::ofstream o(av[2]);
-			// !o.fail()
-			// o.close();
-	std::ifstream in(av[1]);
-	std::string line;
+	}
 	try
 	{
 		std::map<std::string, double>	myMap = fillMap();
 		try
 		{
-			
+			if (!in.good())
+				throw (std::runtime_error("Error:\n	Unable to successfuly open the input file."));
+			getline(in, line);
+			if (line.empty() || line != "date | value")
+				throw (std::runtime_error("Error:\n	file format is not approppriate"));
+			while (getline(in, line))
+			{
+				if (line.empty())
+					throw (std::runtime_error("Error:\n	file format is not approppriate"));
+				if (parseIn(line))
+				 continue;
+				printVal(myMap, line);
+			}
 		}
 		catch(const std::exception& e)
 		{
 			std::cout << e.what() << std::endl;
 		}
-		
 	}
 	catch(const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	// if (!in.good())
-	// 	return (1);
-	// while (getline(in, line))
-	// {
-	// 	// if (line.empty())
-	// 	// 	std::cout << "Empty line received" << line << std::endl;
-	// 	std::cout << "line received:	" << line << std::endl;
-	// }
 	in.close();
 	return (0);
 }
