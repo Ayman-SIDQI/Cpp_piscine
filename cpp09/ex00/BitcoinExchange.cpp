@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 23:41:03 by asidqi            #+#    #+#             */
-/*   Updated: 2023/11/14 14:56:11 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/15 17:04:54 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ short	isValidNum(std::string const &sNum)
 {
 	for (int i = 0; sNum[i]; i++)
 	{
-		// std::cout << "MAMAMAMAMAM input => " << sNum[i]  << std::endl;
 		if (!isnumber(sNum[i]))
 			return (1);
 	}
@@ -79,7 +78,6 @@ std::map<std::string, double>	fillMap( void )
 			throw (std::runtime_error("Error:\n	file format is not approppriate"));
 		myMap.insert(std::make_pair(line.substr(0, 10), strtod(line.substr(11, line.size()).c_str(), NULL)));
 	}
-	// std::cout << "SAT:	" << (--myMap.upper_bound("2021-06-13"))->first << std::endl;
 	in.close();
 	return (myMap);
 }
