@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 23:04:30 by asidqi            #+#    #+#             */
-/*   Updated: 2023/11/13 21:23:19 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/16 15:41:38 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main ( int ac, char **av )
 				if (line.empty())
 					throw (std::runtime_error("Error:\n	file format is not approppriate"));
 				if (parseIn(line))
-				 continue;
+				 	continue ;
 				printVal(myMap, line);
 			}
 		}

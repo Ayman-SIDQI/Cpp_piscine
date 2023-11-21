@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:29:17 by asidqi            #+#    #+#             */
-/*   Updated: 2023/10/18 19:29:59 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/16 17:38:12 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ public:
     RobotomyRequestForm &operator=(RobotomyRequestForm const &);
     void	execute(Bureaucrat const & executor) const;
 private:
-    std::string _t;
+    // std::string _t;
     RobotomyRequestForm();
 };

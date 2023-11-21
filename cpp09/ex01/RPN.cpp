@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:37:14 by asidqi            #+#    #+#             */
-/*   Updated: 2023/11/16 13:13:20 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/17 18:14:12 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ void	calculate(std::stack<int> &sNum, const char *op)
 {
 	if (!sNum.empty())
 	{
-		(void)op;
+		
 		int 	rv = sNum.top();
+		// if (sNum.size() > 1)
+		// 	return ;
 		if (!sNum.empty())
 			sNum.pop();
 		int 	lv = sNum.top();
