@@ -6,7 +6,7 @@
 #    By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 20:33:48 by asidqi            #+#    #+#              #
-#    Updated: 2023/11/17 22:20:47 by asidqi           ###   ########.fr        #
+#    Updated: 2023/12/01 23:02:24 by asidqi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ FLAGS=-Wall -Wextra -Werror  -std=c++98 #-fsanitize=address -g3
 NAME=RPN
 
 SRC=$(wildcard *.cpp)
+HDR=$(wildcard *.hpp)
 
 OBJ=$(SRC:.cpp=.o)
 
@@ -23,7 +24,7 @@ all: $(NAME)
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HDR)
 	$(CC) $(FLAGS) $(OBJ) -o $@
 
 clean: 

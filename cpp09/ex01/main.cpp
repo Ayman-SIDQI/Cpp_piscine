@@ -6,7 +6,7 @@
 /*   By: asidqi <asidqi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:27:58 by asidqi            #+#    #+#             */
-/*   Updated: 2023/11/17 18:14:22 by asidqi           ###   ########.fr       */
+/*   Updated: 2023/11/24 19:46:49 by asidqi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int ac, char ** av)
 			sNum.push(atoi(authN.c_str()));
 		else if (authN.length() == 1  && (authN[0] == '-' || authN[0] == '+' || authN[0] == '/' || authN[0] == '*'))
 		{
-			if (sNum.size() != 2)
+			if (sNum.size() < 2)
 			{
 				std::cout << "Error" << std::endl;
 				return(1);
@@ -45,8 +45,11 @@ int main(int ac, char ** av)
 			return (1);
 		}
 	}
-	if (authN.empty() || sNum.empty())
+	if (authN.empty() || sNum.empty() || sNum.size() != 1)
+	{
+		std::cout << "Error" << std::endl;
 		return (1);
+	}
 	std::cout << "result:	" << sNum.top() << std::endl;
 	return (0);
 }
